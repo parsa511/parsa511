@@ -10,3 +10,21 @@
 parsa511/parsa511 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
+# Ordnerstruktur erneut erstellen
+rebuild_path = "/mnt/data/Mein_Kamera_Shop_Vorschau"
+os.makedirs(rebuild_path, exist_ok=True)
+
+# HTML-Inhalt
+with open(os.path.join(rebuild_path, "index.html"), "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+# CSS-Inhalt
+with open(os.path.join(rebuild_path, "style.css"), "w", encoding="utf-8") as f:
+    f.write(css_content)
+
+# Demo-Bild erneut einfügen
+camera_demo_path = os.path.join(rebuild_path, "camera.jpg")
+demo_img.save(camera_demo_path)
+
+# Zeige Pfad zum Ordner an
+rebuild_path
